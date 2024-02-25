@@ -1,5 +1,5 @@
 module "ecs_cluster" {
-    source = "git@github.com:felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
+    source = "https://github.com/felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
 
     ecs_cluster_name               = "solution-${terraform.workspace}"
     logging                        = "OVERRIDE"
