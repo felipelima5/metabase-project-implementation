@@ -64,7 +64,7 @@ module "elb" {
 }
 
 
-/*
+
 module "app_metabase" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=v1.0.0"
 
@@ -124,10 +124,10 @@ module "app_metabase" {
     target_health_check_interval            = 30
     target_health_check_success_code        = "200-499"
 
-    security_group_alb = ["sg-XXXXXXXXXXXXXXX"]  #Security Group do LoadBalancer Application que enviará as requests
+    security_group_alb = ["sg-003058130bb69ea18"]  #Security Group do LoadBalancer Application que enviará as requests
 
     tags = {
       ManagedBy = "IaC"
     }
 }
-*/
+
