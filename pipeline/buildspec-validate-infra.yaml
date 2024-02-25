@@ -9,8 +9,10 @@ phases:
     - terraform --version
   build:
     commands:
-    - terraform apply -auto-approve
+    - terraform init
+    - terraform validate
+    - terraform workspace new ${ENV}
 
   post_build:
     commands:
-    - echo "plan infra code completed successfully"
+    - echo "validate sintax infra code completed successfully"
