@@ -9,8 +9,9 @@ phases:
     - terraform --version
   build:
     commands:
-    - ls
+    - terraform validate
+    - terraform workspace new ${ENV}
 
   post_build:
     commands:
-    - echo "pipeline completed successfully"
+    - echo "validate sintax infra code completed successfully"
