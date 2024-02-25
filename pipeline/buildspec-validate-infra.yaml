@@ -9,6 +9,7 @@ phases:
     - terraform --version
   build:
     commands:
+    - ls
     - terraform init
     - terraform validate
     - terraform workspace new ${ENV}
