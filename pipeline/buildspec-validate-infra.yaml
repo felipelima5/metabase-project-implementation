@@ -12,7 +12,7 @@ phases:
     - ls
     - terraform init
     - terraform validate
-    - terraform workspace new ${ENV}
+    - terraform workspace select ${ENV}
 
   post_build:
     commands:
