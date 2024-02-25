@@ -66,7 +66,7 @@ module "elb" {
 
 
 module "app_metabase" {
-    source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=v1.0.0"
+    source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
 
     region           = var.region
     application_name = "metabase"
