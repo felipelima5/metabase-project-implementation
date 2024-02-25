@@ -5,7 +5,7 @@ phases:
     commands:
     - curl -O -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-    - mv terraform_${TERRAFORM_VERSION}_linux_amd64.zip /usr/local/bin/
+    - mv terraform /usr/local/bin/
     - terraform --version
   build:
     commands:
