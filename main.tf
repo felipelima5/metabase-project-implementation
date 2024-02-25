@@ -12,6 +12,7 @@ module "ecs_cluster" {
   }
 }
 
+/*
 
 # CRIAÇÃO DO LOAD BALANCER TO TIPO ALB
 module "elb" {
@@ -131,3 +132,4 @@ module "app_metabase" {
     }
 }
 
+*/
