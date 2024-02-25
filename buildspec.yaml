@@ -4,6 +4,9 @@ phases:
   pre_build:
     commands:
     - curl -O -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    - mv /usr/local/bin
+    - terraform --version
   build:
     commands:
     - ls
