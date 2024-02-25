@@ -1,7 +1,7 @@
 data "aws_subnets" "this" {
   filter {
     name   = "vpc-id"
-    values = [lookup(var.vpc_id, terraform.workspace)]
+    values = [var.vpc_id]
   }
 
   tags = {

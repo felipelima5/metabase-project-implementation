@@ -4,12 +4,8 @@ variable "region" {
 }
 
 variable "vpc_id" {
-  type = map(string)
-  default = {
-    dev = "vpc-0cf93c92f757600de"
-    hom = ""
-    prd = ""
-  }
+  type = string
+  default =  "vpc-0cf93c92f757600de"
 }
 
 variable "subnet_type" {
