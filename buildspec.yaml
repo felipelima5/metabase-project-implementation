@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    - curl -o --remote-name https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  build:
+    commands:
+    - ls
+
+  post_build:
+    commands:
+    - echo "pipeline completed successfully"
