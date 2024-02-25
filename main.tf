@@ -1,20 +1,21 @@
 # CRIAÇÃO DO CLUSTER ECS
 module "ecs_cluster" {
-    source = "git::https://github.com/felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
+  source = "git::https://github.com/felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
 
-    ecs_cluster_name               = "solution-${terraform.workspace}"
-    logging                        = "OVERRIDE"
-    cloud_watch_encryption_enabled = true
-    containerInsights              = "enabled"
-    tags = {
-      env       = "${terraform.workspace}"
-      ManagedBy = "IaC"
-    }
+  ecs_cluster_name               = "solution-${terraform.workspace}"
+  logging                        = "OVERRIDE"
+  cloud_watch_encryption_enabled = true
+  containerInsights              = "enabled"
+  tags = {
+    env       = "${terraform.workspace}"
+    ManagedBy = "IaC"
+  }
 }
 
+/*
 # CRIAÇÃO DO LOAD BALANCER TO TIPO ALB
 module "elb" {
-    source = "git::https://github.com/felipelima5/metabase-project-alb-module.git?ref=1.0.0"
+  source = "git::https://github.com/felipelima5/metabase-project-alb-module.git?ref=1.0.0"
 
   alb_name                   = "elb-metabase"
   internal                   = false
@@ -60,5 +61,5 @@ module "elb" {
   aditional_tags = {
     Env = "Dev"
   }
-
 }
+*/
