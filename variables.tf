@@ -16,7 +16,7 @@ variable "subnet_type" {
 variable "elb_arn" {
   type    = map(string)
   default = {
-    dev = ""
+    dev = "arn:aws:elasticloadbalancing:us-east-2:111109532426:loadbalancer/app/elb-metabase/0bdf2d0d7d62ceac"
     hom = ""
     prd = ""
   }
