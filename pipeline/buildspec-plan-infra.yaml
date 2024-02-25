@@ -9,6 +9,8 @@ phases:
     - terraform --version
   build:
     commands:
+    - terraform init
+    - terraform workspace select ${ENV}
     - terraform plan
 
   post_build:

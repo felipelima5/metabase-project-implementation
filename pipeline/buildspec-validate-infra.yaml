@@ -11,8 +11,9 @@ phases:
     commands:
     - ls
     - terraform init
-    - terraform validate
     - terraform workspace select ${ENV}
+    - terraform validate
+
 
   post_build:
     commands:
