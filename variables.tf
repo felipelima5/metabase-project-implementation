@@ -13,5 +13,29 @@ variable "subnet_type" {
   default = "private"
 }
 
+variable "elb_arn" {
+  type    = map(string)
+  default = {
+    dev = ""
+    hom = ""
+    prd = ""
+  }
+}
+
+variable "certificate_arn" {
+  type    = map(string)
+  default = {
+    dev = "arn:aws:acm:us-east-2:111109532426:certificate/d610afc5-9332-40c7-9c30-04f6d9a6f4e6"
+    hom = ""
+    prd = ""
+  }
+}
+
+
+
+
+
+
+
 
 
