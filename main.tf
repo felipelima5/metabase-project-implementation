@@ -1,9 +1,9 @@
-/*
+
 # CRIAÇÃO DO CLUSTER ECS
-module "ecs_cluster" {
+module "ecs_cluster_dev" {
   source = "git::https://github.com/felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
 
-  ecs_cluster_name               = "solution-${terraform.workspace}"
+  ecs_cluster_name               = "cluster-${terraform.workspace}"
   logging                        = "OVERRIDE"
   cloud_watch_encryption_enabled = true
   containerInsights              = "enabled"
@@ -13,12 +13,13 @@ module "ecs_cluster" {
   }
 }
 
+/*
 
 # CRIAÇÃO DO LOAD BALANCER TO TIPO ALB
-module "elb" {
+module "alb" {
   source = "git::https://github.com/felipelima5/metabase-project-alb-module.git?ref=1.0.0"
 
-  alb_name                   = "elb-metabase"
+  alb_name                   = "alb-metabase"
   internal                   = false
   load_balancer_type         = "application"
   enable_deletion_protection = false
@@ -65,11 +66,11 @@ module "elb" {
 }
 
 
-module "app_metabase" {
+module "app_metabase_dev" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
 
     region           = var.region
-    application_name = "metabase"
+    application_name = "metabase-app"
     application_port = 3000 #Port Dockerfile / Application
 
     cloudwatch_log_retention_in_days = 3
@@ -131,11 +132,11 @@ module "app_metabase" {
     }
 }
 
-
-module "rds" {
+*/
+module "db_rds" {
   source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.2"
 
-  instance_identifier     = "metabase-dev"
+  instance_identifier     = "metabase-db"
   db_name                 = "metabase"
   allocated_storage       = 20
   max_allocated_storage   = 50
@@ -172,4 +173,3 @@ module "rds" {
 }
 
 
-*/
