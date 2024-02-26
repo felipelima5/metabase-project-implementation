@@ -63,7 +63,7 @@ module "alb" {
   }
 }
 
-/*
+
 module "app_metabase_dev" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
 
@@ -123,14 +123,14 @@ module "app_metabase_dev" {
     target_health_check_interval            = 30
     target_health_check_success_code        = "200-499"
 
-    security_group_alb = ["sg-00b919b886b832496"]  #Security Group do LoadBalancer Application que enviará as requests
+    security_group_alb = ["sg-00450cbbb5cb72a86"]  #Security Group do LoadBalancer Application que enviará as requests
 
     tags = {
       ManagedBy = "IaC"
     }
 }
 
-*/
+
 module "db_rds" {
   source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.2"
 
