@@ -95,7 +95,7 @@ module "app_metabase_dev" {
     path_env_name                   = "${terraform.workspace}"
 
     # Service
-    ecs_cluster_name                           = "solution-${terraform.workspace}"
+    ecs_cluster_name                           = "cluster-${terraform.workspace}"
     service_desired_count                      = 1 #Quantas Tasks irá subir
     service_launch_type                        = "FARGATE"
     service_deployment_minimum_healthy_percent = 100
