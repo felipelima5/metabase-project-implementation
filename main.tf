@@ -1,3 +1,4 @@
+/*
 # CRIAÇÃO DO CLUSTER ECS
 module "ecs_cluster" {
   source = "git::https://github.com/felipelima5/metabase-project-ecs-cluster-module.git?ref=1.0.1"
@@ -171,3 +172,4 @@ module "rds" {
 }
 
 
+*/
