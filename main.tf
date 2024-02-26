@@ -130,9 +130,9 @@ module "app_metabase" {
     }
 }
 
-/*
+
 module "rds" {
-  source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.1"
+  source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.2"
 
   instance_identifier     = "metabase-dev"
   db_name                 = "metabase"
@@ -169,5 +169,5 @@ module "rds" {
     Env        = "Dev"
   }
 }
-*/
+
 
