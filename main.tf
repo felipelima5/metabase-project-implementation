@@ -133,3 +133,45 @@ module "app_metabase" {
 }
 
 */
+
+
+
+module "rds" {
+  source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.0"
+
+  instance_identifier     = "metabase"
+  db_name                 = "metabase"
+  allocated_storage       = 20
+  max_allocated_storage   = 50
+  publicly_accessible     = true
+  engine                  = "mariadb"
+  engine_version          = "10.5"
+  instance_class          = "db.t4g.micro"
+  multi_az                = false
+  username                = "admin"
+  backup_retention_period = 10 #----------(0 - 35 dias)
+  copy_tags_to_snapshot   = true
+  deletion_protection     = false
+  skip_final_snapshot     = true
+  storage_type            = "gp3" # ------(gp2), (gp3), (io1 - mínimo 100gb)
+  iops                    = null  # ------(caso o storage seja io1 ou gp3)
+  storage_encrypted       = true
+  monitoring_interval                   = 60
+  parameter_group_family                = "mariadb10.5"
+  vpc_id                                = var.vpc_id
+  subnets_ids                           = local.subnets
+
+  security_group_app_ingress_rules = [
+    {
+      description     = "Allow Traffic HTTP 3306"
+      port            = 3306
+      protocol        = "tcp"
+      security_groups = ["sg-0aa4f83c772040668"]
+    }
+  ]
+
+  aditional_tags = {
+    Env        = "Dev"
+  }
+}
+
