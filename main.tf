@@ -132,9 +132,9 @@ module "app_metabase" {
 
 
 module "rds" {
-  source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.0"
+  source = "git::https://github.com/felipelima5/metabase-project-rds-module.git?ref=1.0.1"
 
-  instance_identifier     = "metabase"
+  instance_identifier     = "metabase-dev"
   db_name                 = "metabase"
   allocated_storage       = 20
   max_allocated_storage   = 50
