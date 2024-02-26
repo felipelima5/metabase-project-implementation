@@ -161,7 +161,7 @@ module "db_rds" {
       description     = "Allow Traffic HTTP 3306"
       port            = 3306
       protocol        = "tcp"
-      security_groups = ["sg-07ac050954615546c"] # ECS Service Metabase dev
+      security_groups = ["sg-010e7087a8d79a47d"] # ECS Service Metabase dev
     }
   ]
 
