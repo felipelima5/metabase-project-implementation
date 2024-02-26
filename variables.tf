@@ -19,15 +19,6 @@ variable "subnet_type_public" {
   default = "public"
 }
 
-variable "elb_arn" {
-  type    = string
-}
-
-variable "certificate_arn" {
-  type    = string
-}
-
-
 
 
 
