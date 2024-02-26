@@ -13,6 +13,12 @@ variable "subnet_type" {
   default = "private"
 }
 
+
+variable "subnet_type_public" {
+  type    = string
+  default = "public"
+}
+
 variable "elb_arn" {
   type    = map(string)
   default = {

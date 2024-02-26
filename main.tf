@@ -12,7 +12,6 @@ module "ecs_cluster" {
   }
 }
 
-/*
 
 # CRIAÇÃO DO LOAD BALANCER TO TIPO ALB
 module "elb" {
@@ -23,7 +22,7 @@ module "elb" {
   load_balancer_type         = "application"
   enable_deletion_protection = false
   vpc_id                     = var.vpc_id
-  subnets_ids                = local.subnets
+  subnets_ids                = local.public_subnets
 
   enable_create_s3_bucket_log     = false
   bucket_env_name                 = "log-alb-teste-app-module"
@@ -64,7 +63,7 @@ module "elb" {
   }
 }
 
-
+/*
 
 module "app_metabase" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
@@ -133,7 +132,6 @@ module "app_metabase" {
 }
 
 */
-
 
 
 module "rds" {
