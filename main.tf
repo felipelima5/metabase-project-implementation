@@ -123,7 +123,7 @@ module "app_metabase" {
     target_health_check_interval            = 30
     target_health_check_success_code        = "200-499"
 
-    security_group_alb = ["sg-003058130bb69ea18"]  #Security Group do LoadBalancer Application que enviará as requests
+    security_group_alb = ["sg-00b919b886b832496"]  #Security Group do LoadBalancer Application que enviará as requests
 
     tags = {
       ManagedBy = "IaC"
