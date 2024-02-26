@@ -118,7 +118,7 @@ module "app_metabase" {
     target_protocol_version                 = "HTTP1"
     target_deregistration_delay             = 10
     target_health_check_enable              = true
-    target_health_check_path                = "/"
+    target_health_check_path                = "/setup"
     target_health_check_healthy_threshold   = 5
     target_health_check_unhealthy_threshold = 2
     target_health_check_timeout             = 5
