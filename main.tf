@@ -76,14 +76,14 @@ module "app_metabase" {
     # TASK DEFINITION
     requires_compatibilities                 = "FARGATE"
     network_mode                             = "awsvpc"
-    cpu                                      = 256
-    memory                                   = 512
+    cpu                                      = 1024
+    memory                                   = 2048
     runtime_platform_operating_system_family = "LINUX"
     runtime_platform_cpu_architecture        = "X86_64" # ARM64
     container_definitions_image              = "metabase/metabase:latest"
-    container_definitions_cpu                = 256
-    container_definitions_memory             = 512
-    container_definitions_memory_reservation = 256  #Soft Limit
+    container_definitions_cpu                = 1024
+    container_definitions_memory             = 2048
+    container_definitions_memory_reservation = 1024  #Soft Limit
     container_definitions_essential          = true #Obrigatorio
     container_definitions_command            = ""   #"nodejs,start"
 
@@ -116,7 +116,7 @@ module "app_metabase" {
     target_protocol_version                 = "HTTP1"
     target_deregistration_delay             = 10
     target_health_check_enable              = true
-    target_health_check_path                = "/setup"
+    target_health_check_path                = "/"
     target_health_check_healthy_threshold   = 5
     target_health_check_unhealthy_threshold = 2
     target_health_check_timeout             = 5
