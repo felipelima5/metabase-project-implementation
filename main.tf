@@ -63,7 +63,6 @@ module "elb" {
   }
 }
 
-/*
 
 module "app_metabase" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
@@ -130,8 +129,6 @@ module "app_metabase" {
       ManagedBy = "IaC"
     }
 }
-
-*/
 
 
 module "rds" {
