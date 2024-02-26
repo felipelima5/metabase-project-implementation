@@ -13,8 +13,6 @@ module "ecs_cluster_dev" {
   }
 }
 
-/*
-
 # CRIAÇÃO DO LOAD BALANCER TO TIPO ALB
 module "alb" {
   source = "git::https://github.com/felipelima5/metabase-project-alb-module.git?ref=1.0.0"
@@ -65,7 +63,7 @@ module "alb" {
   }
 }
 
-
+/*
 module "app_metabase_dev" {
     source = "git::https://github.com/felipelima5/metabase-project-ecs-app-module.git?ref=1.0.0"
 
