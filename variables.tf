@@ -20,21 +20,11 @@ variable "subnet_type_public" {
 }
 
 variable "elb_arn" {
-  type    = map(string)
-  default = {
-    dev = "arn:aws:elasticloadbalancing:us-east-2:111109532426:loadbalancer/app/alb-metabase/d74573d4625e3f06"
-    hom = ""
-    prd = ""
-  }
+  type    = string
 }
 
 variable "certificate_arn" {
-  type    = map(string)
-  default = {
-    dev = "arn:aws:acm:us-east-2:111109532426:certificate/d610afc5-9332-40c7-9c30-04f6d9a6f4e6"
-    hom = ""
-    prd = ""
-  }
+  type    = string
 }
 
 

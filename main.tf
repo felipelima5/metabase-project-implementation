@@ -105,10 +105,10 @@ module "app_metabase_dev" {
     subnets_ids                                = local.subnets
 
     # LoadBalancer
-    alb_listener_load_balancer_arn = lookup(var.elb_arn, terraform.workspace) #ARN do ALB
+    alb_listener_load_balancer_arn = "metabase-project-implementation/variables.tf" #ARN do ALB
     alb_listener_port              = "443"
     alb_listener_protocol          = "HTTPS"
-    alb_listener_certificate_arn   = lookup(var.certificate_arn, terraform.workspace)
+    alb_listener_certificate_arn   = "arn:aws:acm:us-east-2:111109532426:certificate/d610afc5-9332-40c7-9c30-04f6d9a6f4e6"
     alb_listener_host_rule         = "metabase-${terraform.workspace}.keephouseorder.net"
 
     # LoadBalancer TargetGroup
