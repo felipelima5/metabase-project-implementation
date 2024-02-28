@@ -11,7 +11,7 @@ The project was implemented in a containerized manner in the AWS cloud.
 Using the Ohio region, the application is located in 3 different AZ's to guarantee high availability of the environment, so that container management is objective and efficient, we use ECS (Elastic Container Service) as an orchestrator.
 
 ### Architecture
-![Metabase Product Screenshot](docs/images/diagram-metabase.svg)
+![Metabase Product Screenshot](docs/images/diagram.png)
 
 
 ### AWS ECS Fargate
