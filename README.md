@@ -12,6 +12,9 @@ Using the Ohio region, the application is located in 3 different AZ's to guarant
 ### AWS ECS Fargate
 O serviço do ECS está implementado como Fargate eliminando quaisquer gestão de instancias e seus SO (Sistema Operacional), o serviço possui seu próprio grupo de segurança bem como sua role permitindo o acesso aos demais serviços da AWS. Para garantir escalabilidade, foi implementado um serviço de Application LoadBalancer que recebe o tréfego na porta 443 (HTTPS) e encaminhando para o(s) container(s) de forma balanceada
 
+### Database with RDS
+For reasons of best practices, security and infrastructure isolation, the database was structured separately from the application, we used the RDS managed service for the bank, this service has backup management, infrastructure management as well as shared security management with to AWS.
+
 ### LOGS
 O serviço possui a saída de logs integrada com o cloudwatch logs, foi escolhido este serviço devido ao seu menor gerenciamento por ser totalmente serverless
 
