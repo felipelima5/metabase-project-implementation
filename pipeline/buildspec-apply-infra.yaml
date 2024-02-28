@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    - curl -O -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    - mv terraform /usr/local/bin/
+    - terraform --version
+  build:
+    commands:
+    - eval "export $(aws sts assume-role --role-arn "${IAM_ACCOUNT_ROLE}/${ROLE_NAME}" --role-session-name infradeploy --output text --query='Credentials.[join(`=`, [`AWS_ACCESS_KEY_ID`, AccessKeyId]), join(`=`, [`AWS_SECRET_ACCESS_KEY`, SecretAccessKey]), join(`=`, [`AWS_SESSION_TOKEN`, SessionToken])]')"
+    - terraform init
+    - terraform workspace select ${ENV}
+    - terraform init
+    - terraform apply -auto-approve
+
+  post_build:
+    commands:
+    - echo "plan infra code completed successfully"
+
